@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.sanat.grpcproto;
+
+option java_multiple_files = true;
+
+message GoodMorningRequest{
+  string requestMessage = 1;
+  string clientName = 2;
+}
+
+message GoodMorningResponse{
+  string responseMessage = 1;
+}
+
+service HelloWorldService {
+  rpc HelloWorld(GoodMorningRequest) returns (GoodMorningResponse);
+}
